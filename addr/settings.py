@@ -1,4 +1,5 @@
 # Django settings for addr project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -108,7 +109,7 @@ ROOT_URLCONF = 'addr.urls'
 WSGI_APPLICATION = 'addr.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "/home/sitong/Dropbox/Projects/addr/templates"
+        os.getcwd()[:-4] + "templates", # addr is 4 characters long
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
