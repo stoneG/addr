@@ -4,7 +4,8 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('books.views',
+    url(r'^$', 'main'),
     # Examples:
     # url(r'^$', 'addr.views.home', name='home'),
     # url(r'^addr/', include('addr.foo.urls')),
