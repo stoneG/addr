@@ -108,6 +108,7 @@ ROOT_URLCONF = 'addr.urls'
 WSGI_APPLICATION = 'addr.wsgi.application'
 
 TEMPLATE_DIRS = (
+    "/home/sitong/Dropbox/Projects/addr/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
