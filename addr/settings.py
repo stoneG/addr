@@ -110,6 +110,7 @@ WSGI_APPLICATION = 'addr.wsgi.application'
 
 TEMPLATE_DIRS = (
         os.getcwd()[:-4] + "templates", # addr is 4 characters long
+        os.getcwd() + "/templates",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

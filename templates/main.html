@@ -5,7 +5,7 @@
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
-      #map_canvas { height: 100% }
+      #map_canvas { height: 80% }
     </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaRYFkamupXUAd2HOOAnqgB_sU7mqWX2k&sensor=false">
@@ -30,7 +30,10 @@
   <body onload="initialize()">
 {% endblock %}
 
+{% block map %}
+  {# if logged in #}
+  <div id="map_canvas" style="width:70%; height:100%"></div>
+{% endblock %}
+
 {% block content %}
-{# if logged in #}
-<div id="map_canvas" style="width:80%; height:80%"></div>
 {% endblock %}
