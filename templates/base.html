@@ -7,7 +7,9 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
 
-  <body>
+  {% block body %}
+    <body>
+  {% endblock %}
     <header>
       {% block header %}{% endblock %}
     </header>
