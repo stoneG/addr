@@ -35,109 +35,38 @@
 {% endblock %}
 
 {% block content %}
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
-hi there</br>
+  <ul class="address">
+    <div id="left">
+      Test addr
+    </div>
+    <div id="right">
+      200 E Dana Street
+      </br>APT 30</br>
+      Mountain View, CA 94041
+    </div>
+  </ul>
+  <ul class="address">
+    <div id="left">
+      Test addr 2
+    </div>
+    <div id="right">
+      123 Test Drive
+      </br>UNIT 1</br>
+      Test City, TX, 12345
+    </ul>
+  </div>
+  {% for address in addresses %}
+    <div class="address">
+      <div id="left">
+        {{ address.name }}
+      </div>
+      <div id="right">
+        {{ address.line_one }}
+        {% if address.line_two %}
+          </br>{{ address.line_two }}</br>
+        {% endif %}
+        {{ address.city }}, {{ address.state }} {{ address.zip_code }}
+      </div>
+    </div>
+  {% endfor %}
 {% endblock %}
