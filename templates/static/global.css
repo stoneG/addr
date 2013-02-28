@@ -23,7 +23,7 @@ div#container {
     z-index: 2;
 }
 
-ul.address {
+ul.address, ul.add_address {
     margin: 2% 10%;
     padding: 1%;
     background-color: #fafafa;
@@ -61,4 +61,32 @@ div#right {
     color: #909090;
     font-size: 0.8em;
     margin: -40% 0 0 0;
+}
+
+ul.add_address {
+    height: 10em;
+}
+
+div#footer {
+    position: fixed;
+    float: right;
+    width: 30%;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+div#footer p {
+    padding: 0;
+    margin: 0;
+}
+
+div#footer p a {
+    color: inherit;
+}
+
+div#footer p a:hover {
+    color: rgb(133, 8, 8);
 }

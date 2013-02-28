@@ -35,28 +35,30 @@
 {% endblock %}
 
 {% block content %}
-  <ul class="address">
-    <div id="left">
-      Test addr
-    </div>
-    <div id="right">
-      200 E Dana Street
-      </br>APT 30</br>
-      Mountain View, CA 94041
-    </div>
-  </ul>
-  <ul class="address">
-    <div id="left">
-      Test addr 2
-    </div>
-    <div id="right">
-      123 Test Drive
-      </br>UNIT 1</br>
-      Test City, TX, 12345
+  {% for i in '123456789012345' %}
+    <ul class="address">
+      <div id="left">
+        Test addr
+      </div>
+      <div id="right">
+        200 E Dana Street
+        </br>APT 30</br>
+        Mountain View, CA 94041
+      </div>
     </ul>
-  </div>
+    <ul class="address">
+      <div id="left">
+        Test addr 2
+      </div>
+      <div id="right">
+        123 Test Drive
+        </br>UNIT 1</br>
+        Test City, TX, 12345
+      </div>
+    </ul>
+  {% endfor %}
   {% for address in addresses %}
-    <div class="address">
+    <ul class="address">
       <div id="left">
         {{ address.name }}
       </div>
@@ -67,6 +69,22 @@
         {% endif %}
         {{ address.city }}, {{ address.state }} {{ address.zip_code }}
       </div>
-    </div>
+    </ul>
   {% endfor %}
+    <ul class="add_address">
+      <form name="add_addr" action="" method="post">
+        <input id="addr_long" type="text" name="name" value="Name"></br>
+        <input id="addr_long" type="text" name="line_one" value="Address Line 1"></br>
+        <input id="addr_long" type="text" name="line_two" value="Address Line 2"></br>
+        <input id="addr_city" type="text" name="city" value="City">
+        <select id="addr_state">
+          <option value="state">CA</option>
+          <option value="state">TX</option>
+        </select>
+        <input id="addr_zip" type="text" name="zip_code" value="Zip Code">
+    </ul>
+{% endblock %}
+
+{% block footer %}
+<p>Built by <a href="http://www.sitongpeng.com">Sitong Peng</a>. Contribute to the <a href="https://github.com/stoneG/addr">project</a>.</p>
 {% endblock %}

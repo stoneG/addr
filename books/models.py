@@ -9,3 +9,6 @@ class Addresses(models.Model):
     state = models.CharField(max_length=2)
     zip_code = models.CharField(max_length=5)
     user = models.ForeignKey(User)
+
+    def __unicode__(self):
+        return self.name
