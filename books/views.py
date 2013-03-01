@@ -8,7 +8,6 @@ def main(request):
     addresses = Addresses.objects.all()
     errors = []
     if request.method == 'POST':
-        errors = []
         required = ['name', 'line_one', 'city', 'state', 'zip_code']
         for entry in required:
             if not request.POST.get(entry, ''):

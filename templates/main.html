@@ -12,14 +12,15 @@
     <script type="text/javascript">
       function initialize() {
         var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
+          center: new google.maps.LatLng(37.531, -122.173),
+          zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-        map.div.style.position = 'fixed';
       }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 {% endblock %}
 
@@ -27,7 +28,7 @@
 
 {# if logged in #}
 {% block body %}
-  <body onload="initialize()">
+  <body>
 {% endblock %}
 
 {% block map %}
@@ -57,6 +58,7 @@
         <input id="addr_city" type="text" name="city" value="City">
         <select id="addr_state" name="state">
           <option value="CA">CA</option>
+          <option value="NY">NY</option>
           <option value="TX">TX</option>
         </select>
         <input id="addr_zip" type="text" name="zip_code" value="Zip Code">
