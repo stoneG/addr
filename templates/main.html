@@ -35,53 +35,36 @@
 {% endblock %}
 
 {% block content %}
-  {% for i in '123456789012345' %}
-    <ul class="address">
-      <div id="left">
-        Test addr
-      </div>
-      <div id="right">
-        200 E Dana Street
-        </br>APT 30</br>
-        Mountain View, CA 94041
-      </div>
-    </ul>
-    <ul class="address">
-      <div id="left">
-        Test addr 2
-      </div>
-      <div id="right">
-        123 Test Drive
-        </br>UNIT 1</br>
-        Test City, TX, 12345
-      </div>
-    </ul>
-  {% endfor %}
   {% for address in addresses %}
     <ul class="address">
       <div id="left">
         {{ address.name }}
       </div>
       <div id="right">
-        {{ address.line_one }}
+        {{ address.line_one }}</br>
         {% if address.line_two %}
-          </br>{{ address.line_two }}</br>
+          {{ address.line_two }}</br>
         {% endif %}
         {{ address.city }}, {{ address.state }} {{ address.zip_code }}
       </div>
     </ul>
   {% endfor %}
     <ul class="add_address">
-      <form name="add_addr" action="" method="post">
+        <form name="add_addr" action="" method="post">{% csrf_token %}
         <input id="addr_long" type="text" name="name" value="Name"></br>
         <input id="addr_long" type="text" name="line_one" value="Address Line 1"></br>
         <input id="addr_long" type="text" name="line_two" value="Address Line 2"></br>
         <input id="addr_city" type="text" name="city" value="City">
-        <select id="addr_state">
-          <option value="state">CA</option>
-          <option value="state">TX</option>
+        <select id="addr_state" name="state">
+          <option value="CA">CA</option>
+          <option value="TX">TX</option>
         </select>
         <input id="addr_zip" type="text" name="zip_code" value="Zip Code">
+        <input type="submit" value="Submit">
+        {% if errors %}
+          {{ errors }}
+        {% endif %}
+      </form>
     </ul>
 {% endblock %}
 

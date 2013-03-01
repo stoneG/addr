@@ -41,13 +41,11 @@ div#left {
     display: inline-block;
     position: absolute;
     left: 1%;
-    top: 50%;
     width: 49%;
     height: 80%;
     color: #303030;
     font-size: 2em;
     line-height: 1.5em;
-    margin: -40% 0 0 0;
 }
 
 div#right {
@@ -55,12 +53,10 @@ div#right {
     position: absolute;
     text-align: right;
     right: 1%;
-    top: 50%;
     width: 49%;
     height: 80%;
     color: #909090;
     font-size: 0.8em;
-    margin: -40% 0 0 0;
 }
 
 ul.add_address {
