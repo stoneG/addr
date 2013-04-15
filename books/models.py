@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Addresses(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     line_one = models.CharField(max_length=100)
     line_two = models.CharField(max_length=50, blank=True)

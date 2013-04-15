@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block head%}
+{% block head %}
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
       html { height: 100% }
@@ -37,6 +37,11 @@
 {% endblock %}
 
 {% block content %}
+  {% if not request.user.is_anonymous %}
+  <p>{{ request.user.get_full_name }}</p> {# They actually need a name though #}
+  {% else %}
+    <p><a href="/login/">Login</a></p>
+  {% endif %}
   {% for address in addresses %}
     <ul class="address">
       <div id="left">
@@ -69,8 +74,4 @@
         {% endif %}
       </form>
     </ul>
-{% endblock %}
-
-{% block footer %}
-<p>Built by <a href="http://www.sitongpeng.com">Sitong Peng</a>. Contribute to the <a href="https://github.com/stoneG/addr">project</a>.</p>
 {% endblock %}

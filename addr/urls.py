@@ -6,6 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('books.views',
     url(r'^$', 'main'),
+    url(r'^login/$', 'log_in'),
+    url(r'^register/$', 'register'),
     # Examples:
     # url(r'^$', 'addr.views.home', name='home'),
     # url(r'^addr/', include('addr.foo.urls')),

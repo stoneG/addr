@@ -3,6 +3,7 @@
 
   <head>
       <link rel=stylesheet type=text/css href="{{ STATIC_ROOT }}global.css">
+      <link rel=stylesheet type=text/css href="/static/global.css">
     {% block head %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
   </head>
@@ -17,7 +18,7 @@
     <div id='container'>
       {% block content %}{% endblock %}
       <div id='footer'>
-        {% block footer %}{% endblock %}
+        <p>Built by <a href="http://www.sitongpeng.com">Sitong Peng</a>. Contribute to the <a href="https://github.com/stoneG/addr">project</a>.</p>
       </div>
     </div>
   </body>
